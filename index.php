@@ -12,12 +12,12 @@ if($_GET['page']!=='')
 if(isset($_SESSION['user'])):
 require_once('ui.php');
 else:
-  if($page == 'login'):
+  if($page == 'login2'):
     echo 'Zum <a href="index.php?page=registrieren2">registrieren</a> hier entlang';
-    require_once('login.php');
-  elseif($page == 'registrieren'):
+    require_once('login2.php');
+  elseif($page == 'registrieren2'):
     echo 'Zum <a href="index.php?page=login2">login</a> hier entlang';
-    require_once('registrieren.php');
+    require_once('registrieren2.php');
   else:
     echo '<a href="index.php?page=registrieren2">registrieren</a> oder <a href="index.php?page=login">einloggen</a>';
   endif;
