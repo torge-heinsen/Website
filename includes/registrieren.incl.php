@@ -12,7 +12,7 @@ if(isset($_POST['absenden']))
     $data=mysqli_query($db, $sql);
     if(mysqli_num_rows($data) == 0)
     {
-      $sql="INSERT INTO users (benutzername,passwort) VALUES ('$benutzername', md5('$passwort'))";
+      $sql="INSERT INTO users (benutzername,passwort,rang) VALUES ('$benutzername', md5('$passwort'), 'member')";
       mysqli_query($db, $sql);
       echo 'konto erstellt';
       echo'<form action="../index.php">
