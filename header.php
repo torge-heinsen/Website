@@ -14,14 +14,14 @@ ini_set('display_errors','On');
 <nav>
   <div class="">
     <ul>
-    <a href="index.php">Startseite</a>
+    <a href="../index.php">Startseite</a>
     <?php
       if(isset($_SESSION['benutzername']) && $_SESSION['rang'] == 'member'){
-        echo "<a href='includes/logout.incl.php'>Abmelden</a>";
+        echo "<a href='../includes/logout.incl.php'>Abmelden</a>";
       }
       elseif(isset($_SESSION['benutzername']) && $_SESSION['rang'] == 'admin') {
-        echo "<a href='members.php'>Mitglieder</a>";
-        echo "<a href='includes/logout.incl.php'>Abmelden</a>";
+        echo "<a href='../members.php'>Mitglieder</a>";
+        echo "<a href='../includes/logout.incl.php'>Abmelden</a>";
       }
       else{
         echo " <a href='login.php'>Anmelden</a>";
