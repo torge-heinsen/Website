@@ -15,6 +15,7 @@ ini_set('display_errors','On');
   <div class="">
     <ul>
     <a href="../index.php">Startseite</a>
+    <a href="../account.php">Mein Benutzerkonto</a>
     <?php
       if(isset($_SESSION['benutzername']) && $_SESSION['rang'] == 'member'){
         echo "<a href='../includes/logout.incl.php'>Abmelden</a>";
