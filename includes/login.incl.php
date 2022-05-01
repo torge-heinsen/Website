@@ -11,14 +11,16 @@ if(isset($_POST['absenden']))
   $passwort = mysqli_real_escape_string($db, trim($_POST['passwort']));
         $sql="SELECT id, benutzername, rang FROM users WHERE benutzername ='$benutzername' &&     passwort = md5('$passwort')";
         $data = mysqli_query($db, $sql);
-      if(mysqli_num_rows($data) == 1)
+        if(mysqli_num_rows($data) == 1)
           {
           $zeile= mysqli_fetch_array($data);
-          //Daten werden der aktuellen Session hizugefügt
-          $_SESSION['id'] = $zeile[0];
-          $_SESSION['benutzername'] = $zeile[1];
-          $_SESSION['rang'] = $zeile[2];
-          $_SESSION['status'] = $zeile[3];
+          if($zeile[3]=='aktiv')
+            {
+            //Daten werden der aktuellen Session hizugefügt
+            $_SESSION['id'] = $zeile[0];
+            $_SESSION['benutzername'] = $zeile[1];
+            $_SESSION['rang'] = $zeile[2];
+            }
           }
 }
 mysqli_close($db);
