@@ -1,23 +1,9 @@
 <?php
 include_once('header.php');
-if(isset($_SESSION['status']))
-{
-  if($_SESSION['status']=='passiv')
+if(isset($_SESSION['benutzername']))
     {
-    echo "Du bist gesperrt";
-    session_unset();
-    session_destroy();
+    echo "hallo " . $_SESSION['benutzername'];
     }
-
-
-  elseif($_SESSION['status']=='aktiv')
-      {
-        if(isset($_SESSION['benutzername']))
-          {
-          echo "hallo " . $_SESSION['benutzername'];
-          }
-      }
-}
 exit();
 ?>
 
